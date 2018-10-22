@@ -31,13 +31,13 @@ class CreateUsersTable extends Migration
             $table->enum('gender', ['Male','Female'])->nullable();
             $table->boolean('status')->default(1);
 
-            $table->integer('role_id')->unsigned();
+            $table->integer('role_id')->unsigned()->default(4);
             $table->foreign('role_id')->references('id')->on('roles');
 
-            $table->integer('institution_id')->unsigned();
+            $table->integer('institution_id')->unsigned()->nullable();
             $table->foreign('institution_id')->references('id')->on('institutions');
 
-            $table->integer('event_id')->unsigned();
+            $table->integer('event_id')->unsigned()->nullable();
             $table->foreign('event_id')->references('id')->on('training_and_events');
         });
     }
