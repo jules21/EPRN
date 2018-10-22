@@ -33,6 +33,12 @@ class CreateUsersTable extends Migration
 
             $table->integer('role_id')->unsigned();
             $table->foreign('role_id')->references('id')->on('roles');
+
+            $table->integer('institution_id')->unsigned();
+            $table->foreign('institution_id')->references('id')->on('institutions');
+
+            $table->integer('event_id')->unsigned();
+            $table->foreign('event_id')->references('id')->on('training_and_events');
         });
     }
 
