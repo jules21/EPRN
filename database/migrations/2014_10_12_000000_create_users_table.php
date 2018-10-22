@@ -22,6 +22,18 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('firstName')->nullable();
+            $table->string('lastName')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('nationality')->nullable();
+            $table->date('dateOfBirth')->nullable();
+            $table->enum('gender', ['Male','Female'])->nullable();
+            $table->boolean('status')->default(1);
+
+            $table->integer('role_id')->unsigned();
+            $table->foreign('role_id')->references('id')->on('roles');
+        });
     }
 
     /**
