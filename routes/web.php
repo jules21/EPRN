@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/loggin', function () {
+    return view('auth.loggin');
+});
 
 Auth::routes();
 
