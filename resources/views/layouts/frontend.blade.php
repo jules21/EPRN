@@ -20,6 +20,7 @@
     <!-- Begin page -->
     <div class="wrapper-page">
        @yield('content')
+       @yield('extra')
     </div>
 
     <!-- jQuery  -->
